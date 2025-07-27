@@ -9,12 +9,21 @@
  - `igraph_mycielskian()` and `igraph_mycielski_graph()` compute a Mycielski transformation of a graph, and a Mycielski graph, respectively. Thanks to Gulshan Kumar @gulshan-123 for contributing this functionality in #2741!
  - `igraph_path_graph()` is a convenience wrapper for `igraph_ring()` with `circular=false`.
  - `igraph_cycle_graph()` is a convenience wrapper for `igraph_ring()` with `circular=true`.
+ - `igraph_bond_percolation()`, `igraph_site_percolation()` and `igraph_edgelist_percolation()` calculates the time evolution of the size of the giant component of a graph when edges or vertices are added one by one in a certain (or random) order. Thanks to Arnór Friðriksson @Zepeacedust for implementing this in #2778!
+
+### Changed
+
+ - `igraph_bipartite_game_gnp()` can now generate graphs with more than a hundred million vertices. Thanks to Dev Lohani @devlohani99 for implementing this in #2767!
 
 ### Fixed
 
  - Fix failure in SIR simulation due to roundoff errors creating slightly negative rates.
  - Fix infinite coordinates for certain path graphs with `igraph_layout_kamada_kawai_3d()`.
  - `igraph_community_leiden()` did iterate until the partition ceased to change when `n_iterations < 0`. Thanks to Lucas Lopes Felipe @lucaslopes for fixing this in #2799!
+
+### Deprecated
+
+ - `igraph_sparmsemat()` and `igraph_weighted_sparsemat()` are now deprecated; their functionality is duplicated by `igraph_get_adjacency_sparse()`. They will be removed in veresion 1.0.
 
 ### Other
 
